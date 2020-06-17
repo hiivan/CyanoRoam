@@ -23,7 +23,7 @@ You may play around with the colours, font weight and hover functions.
 You can also scroll down to the end to change the customized data-tags (credit to Maggie Appleton: Follow her twitter on [@mappletons](https://twitter.com/mappletons)).
 
 # Other useful links 
-Other [#roamcult themes](https://roamresearch.com/#/app/help/page/fJRcVITNY).
+Other #roamcult themes: https://roamresearch.com/#/app/help/page/fJRcVITNY.
 
 To change your colours: [Material Design Colour Palette](https://www.materialui.co/colors).
 
