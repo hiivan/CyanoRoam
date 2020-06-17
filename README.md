@@ -27,5 +27,7 @@ Other #roamcult themes: https://roamresearch.com/#/app/help/page/fJRcVITNY.
 
 To change your colours: [Material Design Colour Palette](https://www.materialui.co/colors).
 
+Follow my twitter: [@ivanang47](https://twitter.com/ivanang47)
+
 # Disclaimer 
 I do not have any knowledge on CSS. I am just sharing my theme here since some people have requested for it.
