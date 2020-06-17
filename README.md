@@ -12,7 +12,7 @@ Inspired and built on top of [Roam Beautified](https://github.com/kanjun/roam-be
 3. Make a subbullet and type /Code Block. 
 4. Copy and paste my css into this code block.
 
-This is how it should look like
+    This is how it should look like
 ![how-to](how-to.png)
 
 5. Set the code language on the upper right corner of the code block to `css` (it is `clojure` by default). The theme should be applied!
