@@ -1,5 +1,5 @@
 # CyanoRoam
-Custom (cyan/teal based) CSS theme for [Roam Research](https://roamresearch.com). You can download the css file [here](https://github.com/hiivan/CyanoRoam/blob/master/CyanoRoam.css) 
+Custom (cyan/teal based) CSS theme for [Roam Research](https://roamresearch.com). You can download the css file [here](https://github.com/hiivan/CyanoRoam/blob/master/CyanoRoam.css). 
 
 Inspired and built on top of [Roam Beautified](https://github.com/kanjun/roam-beautified) created by Github user [Kanjun](https://github.com/kanjun).
 
