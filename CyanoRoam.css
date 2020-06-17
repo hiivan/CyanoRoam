@@ -1,0 +1,295 @@
+/* #CyanoRoam, inspired by Roam Beautified */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Inter';
+}
+
+div,
+textarea {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 100.25%;
+  color: #2d3c4e
+}
+
+.roam-block-container {
+    max-width: 1000px;
+}
+
+.rm-query {
+    border: 0.5px solid #FFFFFF;
+    border-radius: 5px;
+    
+}
+
+.rm-query .rm-query-title {
+    background-color: #f7f8f8;
+    padding: 0.8em;
+    color: #d1dbe2;
+    font-size: 80%;
+}
+
+.rm-reference-main.rm-query-content {
+    padding: 0.8em;
+}
+
+.rm-reference-main .rm-reference-item .rm-block-text {
+    font-size: 90%;
+}
+
+.rm-ref-page-view-title span {
+    font-size: 115%
+}
+
+.rm-reference-main .rm-reference-item .controls {
+    margin-left: -1em;
+}
+
+.rm-ref-page-view {
+    padding: 0.4em 0.2em;
+}
+
+/* Main block - remove centering and make sidebar bigger */
+.roam-center {
+  --align-item: center;
+  flex-basis: 45% !important;
+}
+
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages .page {
+    padding: 6px;
+    padding-top: 8px;
+    font-size: 110%;
+}
+
+div.flex-v-box.starred-pages-wrapper > div.flex-h-box > span {
+    font-size: 14px;
+    opacity: 80%;
+    letter-spacing: 0.0em;
+}
+
+div.roam-sidebar-container.noselect > div > div {
+    font-size: 14px;
+    letter-spacing: 0.03em;   
+}
+#right-sidebar > div {
+    background-color: #EEF3F3CC;
+}
+#roam-right-sidebar-content > div > div:first-child {
+    margin-left: -7px;
+}
+
+/* sidebar sections */
+#roam-right-sidebar-content > div {
+  border-bottom: 1px solid #ddd !important;
+  margin: 0 !important;
+  padding: 40px 10px 40px 50px;
+}
+
+/* page headings in right sidebar */
+#right-sidebar .level2 {
+    font-size: 32px;
+    font-weight: 500;
+}
+
+#block-input {
+    background: white;
+}
+
+.roam-body #block-input > span > div {
+    padding: 6px 24px;
+    background: white;
+}
+
+span.bp3-icon-small.bp3-icon-star {
+    display: none;
+    visibility: hidden;
+}
+
+.rm-page-ref-brackets {
+    display: none;
+}
+.controls .simple-bullet-outer .simple-bullet-inner {
+    background-color: #8C999B;
+}
+.block-border-left {
+    border-left: 1px solid #8C999B5B;
+}
+
+/* kanban configurations */
+.kanban-board {
+    background-color: #fff;
+}
+.kanban-card {
+    background-color: white;
+    margin: 8px;
+    box-shadow: 0px 1px 2px #9EB3C0;
+    padding: 10px;
+    border-radius: 2px;
+    line-height: 1.3em;
+}
+.kanban-title {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 6px;
+}
+.kanban-column {
+    background-color: #E4EDF2;
+    margin: 0px 4px 0px 4px;
+    padding: 4px;
+    min-width: 200px;
+    border-radius: 3px;
+}
+
+.rm-block-ref {
+    border-bottom color: #C6E2E5;
+    font-size: 1em;
+    color: #000000;
+}
+.rm-block-ref:hover {
+    background: none;
+    cursor: pointer;
+}
+.checkmark {
+    background: #fff;
+}
+.check-container {
+    padding-right: 4px;
+}
+.check-container input:checked ~ .checkmark {
+    background: #00ACC1;
+}
+.check-container input:checked ~ .checkmark:after {
+    border-color: #fff;
+}
+.rm-reference-item {
+    margin-top: 8px;
+    border-radius: 6px;
+    border: 1px solid #e4e9ee;
+    margin-right: 8px;
+    flex: 1 1 100%;
+    word-break: break-word;
+    background-color: #f7f9fb;
+    padding: 8px;
+}
+
+.rm-level2 {
+    font-size: 1.5em;
+}
+.rm-level3 {
+    color: #939aae;
+    font-weight: 400;
+    font-size: 1.3em;
+}
+.rm-page-ref {
+    color: #9aabd0;
+}
+.rm-page-ref-link-color {
+    color: #04BDBA;
+    font-weight: 600;
+}
+
+/* page headings */
+a {
+    color: #ff6600;
+  	font-weight: 500;
+}
+a:hover {
+    color: #f1c40f;
+  	font-weight: 500;
+}
+
+/* menubar sections */
+.roam-body .roam-app .roam-sidebar-container {
+    background-color: #006064;
+  	color: white;
+}
+.roam-body
+.roam-app
+.roam-sidebar-container
+.roam-sidebar-content
+.starred-pages-wrapper
+.starred-pages
+.page,
+.bp3-minimal > div {
+  color: #DFF4F2B5;
+  font-weight: normal;
+}
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button,
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper,
+.bp3-minimal > div {
+  	color: #DFF5F3;
+  	font-weight: bold;
+}
+
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .starred-pages-wrapper .starred-pages:hover .page:hover,
+.roam-body .roam-app .roam-sidebar-container .roam-sidebar-content .log-button:hover {
+    background: #009688;
+    color: #FFFFFF;
+    opacity: 100%;
+}
+.starred-pages-wrapper:hover .starred-pages:hover .log-button:hover {
+  	color: white;
+}
+#buffer.tall {
+    height: calc(100vh - 50px);
+}
+.check-container {
+    padding-right: 4px;
+}
+span.rm-page-ref {
+    border-radius: 2px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+.content span.rm-page-ref {
+    padding: 4px 1px 1px;
+    /* required for fixing azo */
+}
+.center-proj {
+    text-align: center;
+}
+
+/* Custom data tags */
+span.rm-page-ref[data-tag="📚Books"] {
+    background: #1ABBCF;
+    color: #fff;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 500;
+}
+span.rm-page-ref[data-tag="🎧Podcasts"] {
+    background: #2D7E88;
+    color: #fff;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 500;
+}
+span.rm-page-ref[data-tag="🧠Ideas"] {
+    background: #EC407A;
+    color: #fff;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 500;
+}
+span.rm-page-ref[data-tag="📖Reflections"] {
+    background: #EAD16E;
+    color: black;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 500;
+}
+span.rm-page-ref[data-tag="Quick Capture"] {
+    color: #db3b8d;
+    padding: 3px 4px;
+    line-height: 1.4em;
+    font-weight: 700;
+}
