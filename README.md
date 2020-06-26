@@ -30,4 +30,4 @@ To change your colours: [Material Design Colour Palette](https://www.materialui.
 Follow me on twitter: [@hiiiivan](https://twitter.com/hiiiivan)
 
 # Disclaimer 
-I do not have any knowledge on CSS. I am just sharing my theme here since some people have requested for it.
+I do not have any knowledge on CSS! I am just sharing my theme here since some people have requested for it.
