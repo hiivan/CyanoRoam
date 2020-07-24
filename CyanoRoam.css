@@ -193,14 +193,14 @@ span.bp3-icon-small.bp3-icon-star {
     color: #9aabd0;
 }
 .rm-page-ref-link-color {
-    color: #04BDBA;
-    font-weight: 600;
+    color: #069592;
+    font-weight: 500;
 }
 
-/* page headings */
+/* external link titles */
 a {
     color: #ff6600;
-  	font-weight: 500;
+  	font-weight: 400;
 }
 a:hover {
     color: #f1c40f;
@@ -258,16 +258,67 @@ span.rm-page-ref {
     text-align: center;
 }
 
+/* Astrolabe */
+.loading-astrolabe {
+    background: url(https://i.imgur.com/ucITJk7.gif); 	
+}
+
+/* Breadcrumb feature */
+
+.recentLink {
+  padding: 0 10px;
+  color: black   !important;
+}
+
+#buttonLayer {
+  border: 0;
+  color: green;
+  font-size: 24px;
+}
+
+#recentLinks, #closeCrumbs {
+  position: absolute;
+  left: 300px;
+  top: 1px;
+  width: auto;
+  height: 45px;
+  padding: 10px;
+  margin-right: 80px;
+}
+
+#closeCrumbs {
+  left: 212px;
+  top: 0px;
+}
+
+.rm-find-or-create-wrapper {
+  z-index: 10;
+}
+
+.rm-saving-icon .rm-saving-inner-icon {
+  opacity: 1;
+  z-index: 10;
+}
+
+.roam-topbar .bp3-popover-wrapper {
+  background: white;
+  z-index: 10;
+}
+
+.bp3-input {
+  background: white !important; /* search bar background color */
+}
+
 /* Custom data tags */
 span.rm-page-ref[data-tag="📚Books"] {
-    background: #1ABBCF;
+    background: #FF5722;
     color: #fff;
     padding: 3px 7px;
     line-height: 2em;
     font-weight: 500;
 }
 span.rm-page-ref[data-tag="🎧Podcasts"] {
-    background: #2D7E88;
+    background: #009688;
     color: #fff;
     padding: 3px 7px;
     line-height: 2em;
@@ -280,13 +331,35 @@ span.rm-page-ref[data-tag="🧠Ideas"] {
     line-height: 2em;
     font-weight: 500;
 }
-span.rm-page-ref[data-tag="📖Reflections"] {
-    background: #EAD16E;
-    color: black;
+span.rm-page-ref[data-tag="☀️Morning Pages"] {
+    background: #ffc40d;
+    color: white;
     padding: 3px 7px;
     line-height: 2em;
     font-weight: 500;
 }
+span.rm-page-ref[data-tag="📝Reflections"] {
+    background: #30BB64;
+    color: white;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 500;
+}
+span.rm-page-ref[data-tag="⏳Timeline of My Life"] {
+    background: #AB47BC;
+    color: #FFFFFF;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 500;
+}
+span.rm-page-ref[data-tag="🌇Summary of the Day"] {
+    background: #1ABBCF;
+    color: #FFFFFF;
+    padding: 3px 7px;
+    line-height: 2em;
+    font-weight: 500;
+}
+
 span.rm-page-ref[data-tag="Quick Capture"] {
     color: #db3b8d;
     padding: 3px 4px;
