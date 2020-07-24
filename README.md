@@ -17,6 +17,12 @@ Inspired and built on top of [Roam Beautified](https://github.com/kanjun/roam-be
 
 5. Set the code language on the upper right corner of the code block to `css` (it is `clojure` by default). The theme should be applied!
 
+# Features
+- Customizable data-tags
+![](data-tags.png)
+- Breadcrumbs for easy viewing of recent pages
+![](breadcrumb.png)
+
 # How to Customize
 You may play around with the colours, font weight and hover functions.
 
@@ -30,4 +36,4 @@ To change your colours: [Material Design Colour Palette](https://www.materialui.
 Follow me on twitter: [@hiiiivan](https://twitter.com/hiiiivan)
 
 # Disclaimer 
-I do not have any knowledge on CSS! I am just sharing my theme here since some people have requested for it.
+I only have a fragmented knowledge on CSS! I am just sharing my theme here since some people have requested for it.
