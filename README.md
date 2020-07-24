@@ -13,15 +13,15 @@ Inspired and built on top of [Roam Beautified](https://github.com/kanjun/roam-be
 4. Copy and paste my css into this code block.
 
     This is how it should look like
-![how-to](how-to.png)
+![how-to](how-to.png =70%)
 
 5. Set the code language on the upper right corner of the code block to `css` (it is `clojure` by default). The theme should be applied!
 
 # Features
 - Customizable data-tags
-![](data-tags.png)
+![](data-tags.png =60%)
 - Breadcrumbs for easy viewing of recent pages
-![](breadcrumb.png)
+![](breadcrumb.png =80%)
 
 # How to Customize
 You may play around with the colours, font weight and hover functions.
