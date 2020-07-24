@@ -4,7 +4,7 @@ Custom (cyan/teal based) CSS theme for <a href="https://roamresearch.com" target
 Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified" target="_blank">Roam Beautified</a> created by Github user <a href="https://github.com/kanjun" target="_blank">Kanjun</a>.
 
 # Preview
-<img src="preview.png" width="90%" height="90%">
+<img src="preview.png" width="100%" height="100%">
 
 # How to Install
 1. Create a new page called 'roam/css' in Roam Research.
@@ -13,7 +13,7 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 4. Copy and paste my css into this code block.
 
     This is how it should look like
-<img src="how-to.png" width="50%" height="50%">
+<img src="how-to.png" width="65%" height="70%">
 
 5. Set the code language on the upper right corner of the code block to `css` (it is `clojure` by default). The theme should be applied!
 
