@@ -26,17 +26,15 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 
 - Breadcrumbs
     - For easy viewing of recent pages. Credit to [Shodty](https://github.com/shodty).
-    - [a Reddit post by u/shodty](https://www.reddit.com/r/RoamResearch/comments/hbxooe/playing_with_the_new_roamjs_made_a_feature_to/?utm_source=share&utm_medium=ios_app&utm_name=iossmf). 
-    
+    - [a Reddit post by u/shodty](https://www.reddit.com/r/RoamResearch/comments/hbxooe/playing_with_the_new_roamjs_made_a_feature_to/?utm_source=share&utm_medium=ios_app&utm_name=iossmf).   
 
 <img src="images/breadcrumb.png" width="65%" height="65%">
 
 - Image Resizing Handle
-
 <img src="images/image-resizer.png" width="65%" height="65%">
 
 - Custom Astrolabe loading icon
-    - <img src="https://i.imgur.com/ucITJk7.gif" width="100" height="100"/>
+    - https://i.imgur.com/ucITJk7.gif
 
 - Template shortcuts 
     - Credit to: [@ViktorTabori](https://twitter.com/ViktorTabori).
