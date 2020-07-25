@@ -18,15 +18,31 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 5. Set the code language on the upper right corner of the code block to `css` (it is `clojure` by default). The theme should be applied!
 
 # Features
-- Customizable data-tags
+- Data-tags
+    - Credit to Maggie Appleton: Follow her twitter on [@mappletons](https://twitter.com/mappletons).
+    - Customizable in the css file.
+
 <img src="data-tags.png" width="25%" height="25%">
-- Breadcrumbs for easy viewing of recent pages
-<img src="breadcrumb.png" width="80%" height="80%">
+
+- Breadcrumbs
+    - For easy viewing of recent pages. Credit to [Shodty](https://github.com/shodty).
+    - [a Reddit post by u/shodty](https://www.reddit.com/r/RoamResearch/comments/hbxooe/playing_with_the_new_roamjs_made_a_feature_to/?utm_source=share&utm_medium=ios_app&utm_name=iossmf). 
+    
+<img src="breadcrumb.png" width="65%" height="65%">
+
+- Image Resizing Handle
+
+<img src="image-resizer.png" width="65%" height="65%">
+
+- Custom Astrolabe loading icon
+    - <img src="https://i.imgur.com/ucITJk7.gif" width="100" height="100"/>
+
+- Template shortcuts 
+    - Credit to: [@ViktorTabori](https://twitter.com/ViktorTabori).
+    - For more instructons on how to configure this on roam/js: https://twitter.com/ViktorTabori/status/1284269497759694848
 
 # How to Customize
-You may play around with the colours, font weight and hover functions.
-
-You can also scroll down to the end to change the customized data-tags (credit to Maggie Appleton: Follow her twitter on [@mappletons](https://twitter.com/mappletons)).
+You may play around with the colours, font weight, hover functions and other features mentioned above in the css file.
 
 # Other useful links 
 Other #roamcult themes: <a href="https://roamresearch.com/#/app/help/page/fJRcVITNY" target="_blank">https://roamresearch.com/#/app/help/page/fJRcVITNY</a>
