@@ -19,14 +19,14 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 
 # Features
 - Data-tags
-    - Credit to Maggie Appleton: Follow her twitter on [@mappletons](https://twitter.com/mappletons).
-    - Customizable in the css file.
+    - Credit to Maggie Appleton: Follow her twitter on [@mappletons](https://twitter.com/mappletons)
+    - Customizable in the css file
 
 <img src="images/data-tags.png" width="25%" height="25%">
 
 - Breadcrumbs
-    - For easy viewing of recent pages. Credit to [Shodty](https://github.com/shodty).
-    - [a Reddit post by u/shodty](https://www.reddit.com/r/RoamResearch/comments/hbxooe/playing_with_the_new_roamjs_made_a_feature_to/?utm_source=share&utm_medium=ios_app&utm_name=iossmf).   
+    - For easy viewing of recent pages. Credit to Github user [Shodty](https://github.com/shodty)
+    - [a Reddit post by u/shodty](https://www.reddit.com/r/RoamResearch/comments/hbxooe/playing_with_the_new_roamjs_made_a_feature_to/?utm_source=share&utm_medium=ios_app&utm_name=iossmf)
 
 <img src="images/breadcrumb.png" width="65%" height="65%">
 
@@ -51,4 +51,4 @@ To change your colours: <a href="https://www.materialui.co/colors" target="_blan
 Follow me on twitter: <a href="https://twitter.com/hiiiivan" target="_blank">@hiiiivan</a>
 
 # Disclaimer 
-I only have a fragmented knowledge on CSS! I am just sharing my theme here since some people have requested for it.
+I only have a fragmented knowledge on CSS! I am just sharing my theme here since some people have requested for it on Twitter and Reddit!
