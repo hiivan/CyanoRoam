@@ -1,302 +1,141 @@
-document.addEventListener('input', function(e){
-	if ('_templateHook' in window) {
-		setTimeout(function(){ window._templateHook(e); }, 0);
-	}
-});
+initiliaze();
 
-window._templateHook = async function(e) {
-	// logging
-	window._e = e;
+function initiliaze() { /*removes any residual instances of breadcrumb feature*/
+    window.removeEventListener("hashchange", timedFunction);
+    document.removeEventListener("keydown", hotKeyEvent);
+    var elem = document.querySelector('#recentLinks');
+    var btn = document.querySelector('#closeCrumbs');
+  	if(elem != null) { elem.parentNode.removeChild(elem); }
+    if(btn != null) { btn.parentNode.removeChild(btn); }
+}
 
-	// exit if not target
-	var elem = e.target
-	if (elem.nodeName != 'TEXTAREA' || e.data != ':') return;
+//#recentLinks div to hold breadcrumbs
+var breadCrumbDiv = document.createElement('div'); // #recentLinks div to hold breadcrumbs
+breadCrumbDiv.id = 'recentLinks';
+breadCrumbDiv.style.position = 'absolute';
+breadCrumbDiv.style.left = '250px';
+breadCrumbDiv.style.height = '45px';
+breadCrumbDiv.style.padding = '10px';
+var topBarDiv = document.getElementsByClassName("roam-topbar")[0];
+topBarDiv.appendChild(breadCrumbDiv); //put it in the topbar div for z-index purposes
+window.addEventListener("hashchange", timedFunction);
 
-	console.log('ok',elem.value, elem);
+//div + button to stop/start listener, & show/hide breadcrumbs
+var toggleDiv = document.createElement('div');
+toggleDiv.id = 'closeCrumbs';
+toggleDiv.style.position = 'absolute';
+toggleDiv.style.left = '250px';
+toggleDiv.style.height = '45px';
+toggleDiv.style.padding = '10px';
+topBarDiv.appendChild(toggleDiv);
 
-	// nativeValueSetter to bypass
-	var nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype,"value").set;
+var toggleButton = document.createElement("button");
+toggleButton.id = 'buttonLayer';
+toggleButton.style.border = '0';
+toggleButton.style.color = 'green';
+toggleButton.style.fontSize = '24px';
+toggleButton.innerHTML = "‣";
+toggleDiv.appendChild(toggleButton);
+toggleButton.onclick = turnOnOff;
 
-	// resolve templates
-	var tab = 0;
-	var text = elem.value;
-	elem.value.replace(/:([^:]+):/g, async function(_, v, position){
-		// lookup template
-		var tmp = getTemplate(v);
+var urlArray = [];
+var linksArray = [];
+var onOff = true;
+var n = 0;
+//this function flips the toggle switch, then shows/hides the breadcrumbs and adds/removes listener
+function turnOnOff() {
+    onOff = !onOff;
+    if (!onOff) {
+        breadCrumbDiv.style.display = 'none';
+        toggleButton.style.color = 'grey';
+      	window.removeEventListener("hashchange", timedFunction);
+    } else {
+        breadCrumbDiv.style.display = 'block';
+        toggleButton.style.color = 'green';
+      	window.addEventListener("hashchange", timedFunction);
+    }
+}
 
-		// if no result
-		if (!tmp) {
-			return _;
-		}
+//had to delay function for adding breadcrumbs to give page time to load
+function timedFunction() {
+    setTimeout(addPageToRecent, 150)
+}
 
-		console.log('template:',v,tmp);
+function addPageToRecent() {
+    var pageUrl = window.location.href; //snags the url for said page
+    if (urlArray.slice(0, 8).includes(pageUrl) == false) { //checks if the link already exists in the last 5 links
+        addLinkElement(pageUrl);
+    }
+    else {
+        var index = urlArray.indexOf(pageUrl);
+        urlArray.splice(index, 1);
+        linksArray.splice(index, 1);
+        addLinkElement(pageUrl);
+    }
+}
 
-		// remove first 
-		tmp = tmp.replace(/^\s*- /,'').split("\n");
+function  addLinkElement(pageUrl) {
+    var parent = document.getElementsByClassName("rm-title-display")[0]; //snags the page title
+  	//change the website link below to yours
+    if(pageUrl == 'https://roamresearch.com/#/app/hivan') {
+        createLinkElement(parent, pageUrl, 0);
+    }
+    if(parent != null) {
+        var children = parent.children[0];
+        createLinkElement(children, pageUrl, 1);
+    }
+    else {
+        var parent = document.getElementsByClassName("zoom-path-view")[0];
+        var children = parent.children[0].children[0].children[0];
+        createLinkElement(children, pageUrl, 2);
+    }
+}
 
-		// process first line
-		var line = tmp.shift();
-		text = text.replace(_, line);
+function createLinkElement(children, pageUrl, urlCase) {
+    var lastNine = pageUrl.substr(pageUrl.length - 9);
+    if(urlCase == 0) {var innerChild = "<span style='color: #FF5E00;'>✹</span> Daily Notes" }
+    else if(urlCase == 1) { var innerChild = children.innerHTML.substring(0, 25) }
+    else if(urlCase == 2) { var innerChild =  "<span style='color: #0D9BDB;'>🞇</span> " + children.innerHTML.substring(0, 20) }
+    var linkElement = "<a id='" + lastNine + "' href='" + pageUrl + "' class='recentLink' style='padding: 0 10px;'>" + innerChild + "</a>"; //adds <a> element to array, maximum 25 chars, increase substring size if you wish
+    urlArray.unshift(pageUrl);
+    linksArray.unshift(linkElement);
+    linksArray = linksArray.slice(0, 8); //reduces the array to 4 links max, increase if you wish
+    breadCrumbDiv.innerHTML = linksArray.slice(1, 8).join("‣"); //puts the <a> array into the breadCrumbDiv
+    var linkElements = document.getElementsByClassName("recentLink");
+    for(i=0; i<linkElements.length; i++){
+        var linkNumber = "<span style='color: #FFFFFF; padding-right: 3px;' class='linkNumber'>" + (i+1).toString() + "</span>";
+    linkElements[i].innerHTML = linkNumber + linkElements[i].innerHTML;
+    }
+}
 
-		// handle heading
-		heading = (line.match(/^(#*) ?/)||['',''])[1].length;
-		if (heading > 0) {
-			console.log('heading:', heading, line.match(/^(#*) ?/));
-			KeyboardLib.changeHeading(heading);
-		}
-		line = line.replace(/^#* ?/, '');
-		if (line == '') line = ' ';
+window.addEventListener ("keyup", hotKeyEvent);
 
-		// set value
-		nativeSetter.call(e.target, line);
-		e.target.selectionStart = position;
-		e.target.selectionEnd = position;
-		e.target.dispatchEvent(new Event('input', {bubbles: true, cancelable: true }));
+function hotKeyEvent(zEvent) {
+    if (zEvent.altKey || zEvent.ctrlKey  &&  zEvent.key === "1") { clickLink(1); }
+    if (zEvent.altKey || zEvent.ctrlKey  &&  zEvent.key === "2") { clickLink(2); }
+    if (zEvent.altKey || zEvent.ctrlKey  &&  zEvent.key === "3") { clickLink(3); }
+    if (zEvent.altKey || zEvent.ctrlKey  &&  zEvent.key === "4") { clickLink(4); }
+    if (zEvent.altKey || zEvent.ctrlKey  &&  zEvent.key === "5") { clickLink(5); }
+    if (zEvent.altKey || zEvent.ctrlKey  &&  zEvent.key === "6") { clickLink(6); }
+    if (zEvent.altKey || zEvent.ctrlKey  &&  zEvent.key === "7") { clickLink(7); }
+}
 
-		// process lines
-		while (tmp.length) {
-			// get new line
-			elem.focus();
-			elem.selectionStart = elem.value.length;
-			elem.selectionEnd = elem.value.length;
+function clickLink(n) {
+    var linkToClick = linksArray[n];
+    if(linkToClick != null) {
+        var linkId = linkToClick.substring(7, 16)
+        var someLink = document.getElementById(linkId);
+        simulateClick(someLink);
+    }
+}
 
-			// get new line and row
-			await KeyboardLib.pressEnter();
-			elem = KeyboardLib.getActiveEditElement();
-			line = tmp.shift();
-
-			// handle tabs
-			console.log('line:', line)
-			tab = line.match(/^\s*/)[0].length/2-tab; // tab difference
-			console.log('tab:',tab);
-			if (tab > 0) {
-				for (var i=0; i<tab; i++) {
-					await KeyboardLib.pressTab()
-				}
-			} else if (tab < 0) {
-				for (var i=0; i<-tab; i++) {
-					await KeyboardLib.pressShiftTab();
-				}
-			}
-			tab = line.match(/^\s*/)[0].length/2; // save current tab length
-
-			// handle heading
-			heading = (line.match(/^\s*- (#*) ?/)||['',''])[1].length;
-			if (heading > 0) {
-				console.log('heading:', heading, line.match(/^\s*- (#*) ?/));
-				KeyboardLib.changeHeading(heading);
-			}
-
-			// set element value
-			elem = KeyboardLib.getActiveEditElement();
-			line = line.replace(/^\s*- #* ?/,'');
-			if (line == '') line = ' ';
-			nativeSetter.call(elem, line);
-			elem.selectionStart = elem.value.length;
-			elem.selectionEnd = elem.value.length;
-			console.log('dispatch event');
-			elem.dispatchEvent(new Event('input', {bubbles: true, cancelable: true }));
-
-			await KeyboardLib.delay(150);
-		}
+var simulateClick = function (elem) {
+	// Create our event (with options)
+	var evt = new MouseEvent('click', {
+		bubbles: true,
+		cancelable: true,
+		view: window
 	});
-}
-
-window.getTemplate = function(name) {
-	/* resolve node function by @ViktorTabori
-	 * id: node id
-	 * level: depth needed for indention
-	 * trail: list of ids to avoid loops
-	 * resolve: resolve block references and embeds starting with an exclamation mark: !{{embed:((blockid))}} and !((blockid))
-	 * skipFirstPrefix: no prefix, needed for block embeds and references
-	 * stop: doesn't resolve children, needed for block reference resolution
-	 */
-	function resolveNode(id, level, trail, resolve, skipFirstPrefix, stop){
-		var level = level || 0; // for indentation
-		var trail = Object.assign({}, trail); // to avoid loops
-		var prefix = skipFirstPrefix ? '' : ' '.repeat(2*Math.max(level-1,0)) + '- '; // indention starting from level 2
-		var newLine = skipFirstPrefix && stop ? '' : "\n"; // no new line when we resolve simple block references
-		var ret = '';
-
-		// avoid loops: skip if trail already contains id
-		if (trail[id]) return;
-		trail[id] = true;
-
-		// get node info
-		var node = window.roamAlphaAPI.pull("[*]",id);
-
-		// node order
-		var order = node[':block/order'] || 0;
-
-		// add heading to prefix
-		if (node[':block/heading'] && node[':block/heading'] > 0) {
-			prefix += '#'.repeat(node[':block/heading'])+' ';
-		}
-
-		// current node string
-		if (typeof node[':block/string'] != 'undefined') {
-			// resolve block EMBEDs
-			var regexEmbed = resolve ? /!?{{\[*embed\]*\s*:\s*\(\(([^\)]*)\)\)\s*}}/ig : /!{{\[*embed\]*\s*:\s*\(\(([^\)]*)\)\)\s*}}/ig;
-			node[':block/string'] = node[':block/string'].replace(regexEmbed, function(_, v){ 
-				var uid = v.trim();
-				var id = window.roamAlphaAPI.q("[:find ?e :in $ ?a :where [?e :block/uid ?a]]", uid);
-				if (id.length == 0) {
-					return _;
-				}
-				var block = resolveNode(id[0][0], level, trail, true, true); // resolve node, no prefix
-				if (typeof block != 'undefined') { // for loops we got back undefined
-					return block;
-				} else {
-					return 'LOOP:'+_;
-				}
-			});
-
-			// resolve block REFERENCEs
-			var regexReference = resolve ? /!?\(\(([^\)]*)\)\)/ig : /!\(\(([^\)]*)\)\)/ig;
-			node[':block/string'] = node[':block/string'].replace(regexReference, function(_, v){ 
-				var uid = v.trim();
-				var id = window.roamAlphaAPI.q("[:find ?e :in $ ?a :where [?e :block/uid ?a]]", uid);
-				if (id.length == 0) {
-					return _;
-				}
-				var block = resolveNode(id[0][0], level, trail, true, true, true); // resolve node, no prefix, don't resolve children
-				if (typeof block != 'undefined') { // for loops we got back undefined
-					return block;
-				} else {
-					return 'LOOP:'+_;
-				}
-			});
-
-
-			// add block text to return
-			ret += prefix + node[':block/string'] + newLine;
-		}
-
-		// handle children
-		if (node[':block/children'] && !stop) {
-			var children = [];
-			var tmp;
-
-			// get children data
-			for (var i in node[':block/children']) {
-				tmp = resolveNode(node[':block/children'][i][':db/id'], level+1, trail);
-				if (typeof tmp != 'undefined') {
-					children.push(tmp);
-				}
-			}
-
-			// sort children in order
-			children.sort(function(a,b){return a.order-b.order})
-
-			// concat children text
-			ret += children.map(function(i){return i.txt}).join('');
-		}
-
-		// return based on how deep we are in the graph
-		if (level == 0 || skipFirstPrefix) {
-			return ret;
-		} else {
-			return {txt: ret, order: order};
-		}
-	}
-
-	// check API endpoint
-	if (!window.roamAlphaAPI || !window.roamAlphaAPI.q || !window.roamAlphaAPI.pull) return; // no api endpoint
-
-	// search node ID
-	var nodeId; // page we look for
-	var search = ['template','[[template]]']; // search for template in template/name, [[template]]/name, ...
-	for (var i in search) {
-		nodeId = window.roamAlphaAPI.q("[:find ?e :in $ ?a :where [?e :node/title ?a]]", search[i]+'/'+name);
-		if (nodeId.length) {
-			nodeId = nodeId[0][0];
-			break;
-		}
-	}
-
-	if (!nodeId || nodeId.length == 0) return; // no such template
-
-	return resolveNode(nodeId);
-}
-
-window.KeyboardLib = {
-	// thank you @VladyslavSitalo for the awesome Roam Toolkit, and the basis for this code
-    LEFT_ARROW: 37,
-    UP_ARROW: 38,
-    RIGHT_ARROW: 39,
-    DOWN_ARROW: 40,
-    BASE_DELAY: 20,
-
-    delay(millis) {
-    	return new Promise(resolve => setTimeout(resolve, millis))
-	},
-	getKeyboardEvent: function(type, code, opts) {
-	    return new KeyboardEvent(type, {
-	        bubbles: true,
-	        cancelable: true,
-	        keyCode: code,
-	        ...opts,
-	    })
-	},
-	getActiveEditElement: function() {
-	    // stolen from Surfingkeys. Needs work.
-	    var element = document.activeElement
-	    // on some pages like chrome://history/, input is in shadowRoot of several other recursive shadowRoots.
-	    while (element.shadowRoot) {
-	        if (element.shadowRoot.activeElement) {
-	            element = element.shadowRoot.activeElement
-	        } else {
-	            var subElement = element.shadowRoot.querySelector('input, textarea, select')
-	            if (subElement) {
-	                element = subElement
-	            }
-	            break
-	        }
-	    }
-	    return element
-	},
-	async simulateSequence(events, delayOverride) {
-    	;events.forEach(function(e){
-			return KeyboardLib.getActiveEditElement().dispatchEvent(KeyboardLib.getKeyboardEvent(e.name, e.code, e.opt));
-		});
-        return this.delay(delayOverride || this.BASE_DELAY);
-    },
-    async simulateKey(code, delayOverride, opts) {
-        return this.simulateSequence([{name:'keydown', code:code, opt:opts}, {name:'keyup', code:code, opt:opts}], delayOverride);
-    },
-    async changeHeading(heading, delayOverride) {
-        return this.simulateSequence(
-        	[
-        		{name:'keydown', code:18, opt:{altKey:true}},
-				{name:'keydown', code:91, opt:{metaKey:true}},
-				{name:'keydown', code:48+heading, opt:{altKey:true, metaKey:true}},
-				{name:'keyup', code:91, opt:{altKey:true}},
-				{name:'keyup', code:18, opt:{}}
-			],
-        	delayOverride);
-    },
-    async pressEnter(delayOverride) {
-        return this.simulateKey(13, delayOverride)
-    },
-    async pressEsc(delayOverride) {
-        return this.simulateKey(27, delayOverride)
-    },
-    async pressBackspace(delayOverride) {
-        return this.simulateKey(8, delayOverride)
-    },
-    async pressTab(delayOverride) {
-        return this.simulateKey(9, delayOverride)
-    },
-    async pressShiftTab(delayOverride) {
-        return this.simulateKey(9, delayOverride, {shiftKey: true})
-    },
-    async pressCtrlV(delayOverride) {
-        return this.simulateKey(118, delayOverride, {metaKey: true})
-    },
-	getInputEvent() {
-	    return new Event('input', {
-	        bubbles: true,
-	        cancelable: true,
-	    })
-	},
-}
+	// If cancelled, don't dispatch our event
+	var canceled = !elem.dispatchEvent(evt);
+};
