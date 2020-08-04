@@ -7,7 +7,7 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 <img src="images/preview.png" width="80%" height="80%">
 
 # How to Install
-**CSS**
+**CSS:**
 1. Create a new page called [[roam/css]] in Roam Research.
 2. Create a bullet point and copy & paste `CyanoRoam` (or any name you like) in it.
 3. Create a subbullet. Either type in '/Code Block', or and copy & paste '```'.
@@ -18,7 +18,7 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 
 5. Set the code language on the upper right corner of the code block to `css` (it is `clojure` by default). The theme should be applied!
 
-**JavaScript** (for breadcrumb and template shortcut features respectively)
+**JavaScript** (for breadcrumb and template shortcut features respectively)**:**
 1. Create a new page called [[roam/js]] in Roam Research.
 2. Create a bullet point and copy & paste `{{[[roam/js]]}}`.
 3. Create a subbullet. Either type in '/Code Block', or and copy & paste '```'.
