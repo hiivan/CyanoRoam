@@ -10,7 +10,7 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 **CSS:**
 1. Create a new page called [[roam/css]] in Roam Research.
 2. Create a bullet point and copy & paste `CyanoRoam` (or any name you like) in it.
-3. Create a subbullet. Either type in '/Code Block', or and copy & paste ```.
+3. Create a subbullet. Either type in '/Code Block', or simply copy & paste ```.
 4. Copy and paste the code inside the CyanoRoam.css file into this code block.
 
     This is how it should look like
@@ -21,7 +21,7 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 **JavaScript** (for breadcrumb and template shortcut features respectively)**:**
 1. Create a new page called [[roam/js]] in Roam Research.
 2. Create a bullet point and copy & paste `{{[[roam/js]]}}`.
-3. Create a subbullet. Either type in '/Code Block', or and copy & paste '```'.
+3. Create a subbullet. Either type in '/Code Block', or simply copy & paste '```'.
 4. Copy and paste the code inside either one of the JavaScript file into this code block.
 5. Set the code language on the upper right corner of the code block to `javascript` (it is `clojure` by default). Allow the script to run! 
 
