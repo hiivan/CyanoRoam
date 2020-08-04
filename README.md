@@ -1,5 +1,5 @@
 # CyanoRoam
-Custom (cyan/teal based) CSS and JavaScript theme for <a href="https://roamresearch.com" target="_blank">Roam Research</a>. Here is the <a href="https://github.com/hiivan/CyanoRoam/blob/master/CyanoRoam.css" target="_blank">CyanoRoam.css</a> file and the <a href="https://github.com/hiivan/CyanoRoam/tree/master/javascript" target="_blank">JavaScript</a> folder.
+Custom (cyan/teal based) CSS and JavaScript theme for <a href="https://roamresearch.com" target="_blank">Roam Research</a>, a note-taking app. Here is the <a href="https://github.com/hiivan/CyanoRoam/blob/master/CyanoRoam.css" target="_blank">CyanoRoam.css</a> file and the <a href="https://github.com/hiivan/CyanoRoam/tree/master/javascript" target="_blank">JavaScript</a> folder.
 
 Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified" target="_blank">Roam Beautified</a> created by Github user <a href="https://github.com/kanjun" target="_blank">Kanjun</a>.
 
