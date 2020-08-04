@@ -4,7 +4,7 @@ Custom (cyan/teal based) CSS and JavaScript theme for <a href="https://roamresea
 Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified" target="_blank">Roam Beautified</a> created by Github user <a href="https://github.com/kanjun" target="_blank">Kanjun</a>.
 
 # Preview
-<img src="images/preview.png" width="100%" height="100%">
+<img src="images/preview.png" width="80%" height="80%">
 
 # How to Install
 **CSS**
@@ -14,7 +14,7 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 4. Copy and paste the code inside the CyanoRoam.css file into this code block.
 
     This is how it should look like
-<img src="images/how-to.png" width="65%" height="70%">
+<img src="images/how-to.png" width="50%" height="55%">
 
 5. Set the code language on the upper right corner of the code block to `css` (it is `clojure` by default). The theme should be applied!
 
@@ -31,17 +31,18 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
     - Credit to Maggie Appleton: Follow her twitter on [@mappletons](https://twitter.com/mappletons)
     - Customizable in the CSS file
 
-<img src="images/data-tags.png" width="25%" height="25%">
+<img src="images/data-tags.png" width="20%" height="20%">
 
 - Breadcrumbs (requires JavaScript)
     - For easy viewing of recent pages. 
     - Note: This isn't fully optimized for mobile use.
     - Credit to Github user [Shodty](https://github.com/shodty). Source: [a Reddit post by u/shodty](https://www.reddit.com/r/RoamResearch/comments/hbxooe/playing_with_the_new_roamjs_made_a_feature_to/?utm_source=share&utm_medium=ios_app&utm_name=iossmf)
 
-<img src="images/breadcrumb.png" width="65%" height="65%">
+<img src="images/breadcrumb.png" width="45%" height="45%">
 
 - Image Resizing Handle
-<img src="images/image-resizer.png" width="65%" height="65%">
+    - I added a big and visible button on the bottom right of the image, making it much easier to resize images.
+<img src="images/image-resizer.png" width="30%" height="30%">
 
 - Custom Astrolabe loading icon
     - https://i.imgur.com/ucITJk7.gif
