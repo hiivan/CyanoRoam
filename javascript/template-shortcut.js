@@ -1,3 +1,5 @@
+//Credit to Viktor Tabori at https://gist.github.com/thesved/79371d0c1dd34b6750c846368b323113
+
 document.addEventListener('input', function(e){
 	if ('_templateHook' in window) {
 		setTimeout(function(){ window._templateHook(e); }, 0);
