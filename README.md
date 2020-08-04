@@ -10,7 +10,7 @@ Inspired and built on top of <a href="https://github.com/kanjun/roam-beautified"
 **CSS:**
 1. Create a new page called [[roam/css]] in Roam Research.
 2. Create a bullet point and copy & paste `CyanoRoam` (or any name you like) in it.
-3. Create a subbullet. Either type in '/Code Block', or and copy & paste '```'.
+3. Create a subbullet. Either type in '/Code Block', or and copy & paste ```.
 4. Copy and paste the code inside the CyanoRoam.css file into this code block.
 
     This is how it should look like
